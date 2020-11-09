@@ -1,0 +1,16 @@
+*.log
+.idea/
+.openzeppelin/
+artifacts/
+cache/
+deployments/buidlerevm*
+deployments/ganache*
+deployments/hardhat*
+deployments/localhost*
+deployments/mainnet/solcInputs/
+dist/
+keystore/
+log*
+node_modules*/
+tenderly.yaml
+typechain/
