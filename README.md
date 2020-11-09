@@ -2,6 +2,14 @@ Example showing failure to run `tenderly export` in a hardhat environment.
 
 Reproduction steps:
 
+Install / setup:
+```
+yarn install
+curl https://raw.githubusercontent.com/Tenderly/tenderly-cli/master/scripts/install-linux.sh | sudo sh
+tenderly login
+tenderly export init
+```
+
 Create `keystore/secrets.json` containing your credentials:
 ```
 {
@@ -13,16 +21,6 @@ Create `keystore/secrets.json` containing your credentials:
     "project": "xxxxxx"
   }
 }
-
-```
-
-Install / setup:
-```
-yarn install
-curl https://raw.githubusercontent.com/Tenderly/tenderly-cli/master/scripts/install-linux.sh | sudo sh
-tenderly login
-tenderly export init
-
 ```
 
 Start a local hardhat node forked from mainnet:
@@ -32,7 +30,7 @@ npx hardhat --verbose --show-stack-traces node --no-deploy
 
 Run a test case, which sends a transaction to the hardhat node:
 ```
-npx hardhat test
+npx hardhat --network localhost test
 ```
 
 Note the txid in the hardhat node console. Attempt to export that transaction:
