@@ -14,3 +14,5 @@ log*
 node_modules*/
 tenderly.yaml
 typechain/
+
+.openzeppelin/.session
